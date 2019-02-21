@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<title>S'envoler</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <div class="w3-top">
+            <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
+        <div class="w3-bar w3-amber w3-card w3-amber w3-hover-orange w3-hide-small"  style="bottom:10%;opacity:0.7;" id="myNavbar">
+          <a href="/" class="w3-bar-item w3-button w3-wide" style="font-family: 'Cedarville Cursive', cursive; font-size: 70px;">S'envoler</a>
+          <div class="w3-right w3-hide-small">
+              {% if current_user.is_authenticated %}
+            <a href="/" class="w3-bar-item w3-button" style="font-family: 'Roboto Mono', sans-serif; font-size: 20px;"><i class="fa fa-th"></i>SIGN OUT</a>
+            {%else%}
+            <a href="/" class="w3-bar-item w3-button" style="font-family: 'Roboto Mono', sans-serif;font-size: 20px;"><i class="fa fa-th"></i>SIGN IN</a>
+            {%endif%}
+            {% if current_user.is_authenticated %}
+            <a href="/" class="w3-bar-item w3-button" style="font-family: 'Roboto Mono', sans-serif;font-size: 20px;"><i class="fa fa-user"></i> PROFILE</a>
+            {%else%}
+            <a href="/" class="w3-bar-item w3-button" style="font-family: 'Roboto Mono', sans-serif;font-size: 20px;"><i class="fa fa-user"></i>PROFILE</a>
+            {%endif%}
+            <a href="#about" class="w3-bar-item w3-button" style="font-family: 'Roboto Mono', sans-serif;font-size: 20px;"><i class="fa fa-envelope"></i> ABOUT</a>
+          </div>
+          <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+            <i class="fa fa-bars"></i>
+          </a>
+         
+        </div>
+      </div>
+      <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+        <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+        <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+        <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+        <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+        <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+      </nav>
+        </div>
+      </div>
+      <body>
+<div class="w3-display-container" style="margin-bottom:50px">
+  <img src="{{ url_for('static', filename='photos/plane.jpeg') }}" style="width:100%">
+  <div class="w3-display-bottomleft w3-container w3-amber w3-hover-orange w3-hide-small"
+   style="bottom:20%;opacity:0.8;width:70%">
+   {% if current_user.is_authenticated %}
+   <p> <a href="{{url_for('main.search')}}" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-hover-opacity-on " style="font-family: 'Roboto Mono', sans-serif; font-size: 30px;"> Search Now</a> </p>
+   {% else %}
+   <p> <a href="{{url_for('main.search')}}" class="w3-button w3-black w3-padding-large w3-large w3-margin-top  w3-hover-opacity-on" style="font-family: 'Roboto Mono', sans-serif;font-size: 30px;"> Search Now</a> </p>
+   {% endif %}
+</div>
+</div>
+  <div class="w3-row w3-container" style="margin:50px 0">
+  <div class="w3-half w3-container" id="about">
+    <div class="w3-topbar w3-border-amber">
+      <img src="/w3images/cellphone.jpg" style="width:100%">
+      <h2 style=" font-size: 30px;">Ivy Nzioka</h2>
+      <p>Full vacation control from your cell phone.</p>
+    </div>
+  </div>
+  
+  <div class="w3-half w3-container">
+    <div class="w3-topbar w3-border-amber">
+      <img src="/w3images/sealions.jpg" style="width:100%">
+      <h2 style="font-size: 30px;">Joy Wendo</h2>
+      <p>Up to 50% offers. Always 25% student offers.</p>
+    </div>
+  </div>
+  </div>
+  
+  <div class="w3-row w3-container" style="margin:50px 0">
+  <div class="w3-half w3-container">
+    <div class="w3-topbar w3-border-orange">
+      <img src="/w3images/truck.jpg" style="width:100%">
+      <h2 style=" font-size: 30px;">James Nduge</h2>
+      <p>Wherever you travel our car rental is included.</p>
+    </div>
+  </div>
+  
+  <div class="w3-half w3-container">
+    <div class="w3-topbar w3-border-orange">
+      <img src="/w3images/nowornever.jpg" style="width:100%">
+      <h2 style="font-size: 30px;">Oluwadamilola Shabi</h2>
+      <p>Don't wait until it is to late.</p>
+      </div>
+  </div>
+  </div>
+  
+
+
+
+  <script>
+    // Modal Image Gallery
+    function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
+    }
+    
+    
+    // Toggle between showing and hiding the sidebar when clicking the menu icon
+    var mySidebar = document.getElementById("mySidebar");
+    
+    function w3_open() {
+      if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+      } else {
+        mySidebar.style.display = 'block';
+      }
+    }
+    
+    // Close the sidebar with the close button
+    function w3_close() {
+        mySidebar.style.display = "none";
+    }
+    </script>
+    
+  </body>
+  </html>
