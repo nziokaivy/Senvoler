@@ -36,3 +36,4 @@ class Flight:
         self.locale = locale
         self.destinationPlace = destinationPlace
         self.outboundDate = outboundDate
+

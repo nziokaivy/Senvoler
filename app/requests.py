@@ -1,11 +1,11 @@
 import urllib.request,json
 from .models import Flight, User
+import ssl 
 
 api_key = None
 
 base_url = None
-
-
+   
 
 def configure_request(app):
     global api_key,base_url
@@ -14,7 +14,7 @@ def configure_request(app):
 
 def get_flight(query):
 
-    get_flight_url ='https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/v1.0?api_key={}'.format(api_key)
+    get_flight_url ='https://rapidapi.com/skyscanner/api/skyscanner-flight-search={}?endpoint={}'.format(query, api_key)
 
     with urllib.request.urlopen(get_flight_url) as url:
         get_flight_data = url.read()
@@ -31,6 +31,7 @@ def get_flight(query):
 def process_results(flight_list):
     
     flight_results = []
+
     for flight in flight_list:
         inboundDate = flight.get('inboundDate')
         cabinClass = flight.get('cabinClass')
@@ -44,7 +45,6 @@ def process_results(flight_list):
         destinationPlace = flight.get('destinationPlace')
         outboundDate = flight.get('outboundDate')
         adults = flight.get('adults')
-        
 
         flight_object = Flight(inboundDate,cabinClass,children,infants,groupPricing,country,currency,locale,originPlace,destinationPlace,outboundDate,adults)
         
