@@ -5,7 +5,7 @@ class Config:
     General configuration parent class
     '''
    
-    #API_BASE_URL = 'http://quotes.stormconsultancy.co.uk/random.json'
+    API_BASE_URL = 'http://quotes.stormconsultancy.co.uk/random.json'
     #SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://AbbyShabi:dammy@localhost/iblog'
     SECRET_KEY = os.environ.get('SECRET_KEY')
     UPLOADED_PHOTOS_DEST ='app/static/photos'

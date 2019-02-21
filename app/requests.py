@@ -1,8 +1,6 @@
 import urllib.request,json
-from .models import Flight
-import ssl
 
-ssl._create_default_https_context = ssl._create_unverified_context
+
 
 api_key = None
 
@@ -13,9 +11,9 @@ def configure_request(app):
     api_key = app.config['FLIGHT_API_KEY']
     base_url = app.config['FLIGHT_API_BASE_URL']
 
-def get_flight(data):
+def get_flight(places):
 
-    get_flight_url = base_url.format(category,api_key)
+    get_flight_url = 'https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/v1.0?api_key={}&inboundDate={}&cabinClass={}&children={}&infants={}&country={}&currency={}&locale={}'.format(places,api_key)
 
     with urllib.request.urlopen(get_flight_url) as url:
         get_flight_data = url.read()
@@ -23,32 +21,13 @@ def get_flight(data):
 
         flight_results = None
 
-        if get_flight_response['data']:
-            flight_results_list = get_flight_response['data']
+        if get_flight_response['places']:
+            flight_results_list = get_flight_response['places']
             flight_results = process_results(flight_results_list)
+            
+            print(flight_results)
 
 
-    return flight_results
-
-def process_results(flight_list):
    
-    flight_results = []
-
-    for flight in flight_list:
-        source = flight.get('')
-        destination = flight.get('')
-        departure_date = flight.get('')
-        arrival_date = flight.get('')
-        seating_class = flight.get('')
-        adults = flight.get('')
-        children = flight.get('')
-        infants = flight.get('')
-        counter = flight.get('')
-
-        if flight:
-            flight_object = Flight(source, destination, departure_date, arrival_date, seating_class, adults, children, infants, ounter)
-            flight_results.append(flight_object)
-
-    return movie_results
         
         
