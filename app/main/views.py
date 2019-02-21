@@ -11,7 +11,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 @main.route('/')
 def index():
 
-    flights = get_flight('places')
+    
    
     return render_template('index.html')
 
@@ -22,4 +22,4 @@ def search():
     View root page function that returns the index page and its data
     '''
     title = 'Home - Welcome to The best Movie Review Website Online'
-    return render_template('search.html',flights=flights)
+    return render_template('search.html')

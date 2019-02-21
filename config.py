@@ -6,6 +6,7 @@ class Config:
     '''
     FLIGHT_API_BASE_URL ='https://dev-sandbox-api.airhob.com/sandboxapi/activities/v1/search{}?api_key={}'
     FLIGHT_API_KEY = os.environ.get('FLIGHT_API_KEY')
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://AbbyShabi:dammy@localhost/senvoler'
     SECRET_KEY = os.environ.get('SECRET_KEY')
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     MAIL_SERVER = 'smtp.googlemail.com'
