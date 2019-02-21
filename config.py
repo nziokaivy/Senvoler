@@ -4,10 +4,14 @@ class Config:
     '''
     General configuration parent class
     '''
+<<<<<<< HEAD
    
     API_BASE_URL = 'http://quotes.stormconsultancy.co.uk/random.json'
     #SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://AbbyShabi:dammy@localhost/iblog'
     FLIGHT_API_BASE_URL ='https://dev-sandbox-api.airhob.com/sandboxapi/activities/v1/search{}?api_key={}''
+=======
+    FLIGHT_API_BASE_URL ='https://dev-sandbox-api.airhob.com/sandboxapi/activities/v1/search{}?api_key={}'
+>>>>>>> 1067f1cb5b6d478fd942beb08f730058345d437a
     FLIGHT_API_KEY = os.environ.get('FLIGHT_API_KEY')
     SECRET_KEY = os.environ.get('SECRET_KEY')
     UPLOADED_PHOTOS_DEST ='app/static/photos'
@@ -15,6 +19,7 @@ class Config:
     MAIL_PORT = 587
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
+
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
 
 

@@ -40,9 +40,9 @@ def process_results(flight_list):
         currency = flight.get('currency')
         locale = flight.get('locale')
         originPlace = flight.get('originPlace')
-        destinationPlace = flight.get(' destinationPlace')
+        destinationPlace = flight.get('destinationPlace')
         outboundDate = flight.get('outboundDate')
-        adults = flight.get(' adults')
+        adults = flight.get('adults')
         
 
         flight_object = Flight(inboundDate,cabinClass,children,infants,groupPricing,country,currency,locale,originPlace,destinationPlace,outboundDate,adults)
