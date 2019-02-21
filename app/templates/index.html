@@ -21,7 +21,7 @@
             {%else%}
             <a href="/" class="w3-bar-item w3-button" style="font-family: 'Roboto Mono', sans-serif;font-size: 20px;"><i class="fa fa-user"></i>PROFILE</a>
             {%endif%}
-            <a href="#contact" class="w3-bar-item w3-button" style="font-family: 'Roboto Mono', sans-serif;font-size: 20px;"><i class="fa fa-envelope"></i> ABOUT</a>
+            <a href="#about" class="w3-bar-item w3-button" style="font-family: 'Roboto Mono', sans-serif;font-size: 20px;"><i class="fa fa-envelope"></i> ABOUT</a>
           </div>
           <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
             <i class="fa fa-bars"></i>
@@ -45,17 +45,17 @@
   <div class="w3-display-bottomleft w3-container w3-amber w3-hover-orange w3-hide-small"
    style="bottom:10%;opacity:0.7;width:70%">
    {% if current_user.is_authenticated %}
-   <p> <a href="/" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-hover-opacity-on " style="font-family: 'Roboto Mono', sans-serif; font-size: 30px;"> Search Now</a> </p>
+   <p> <a href="/search" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-hover-opacity-on " style="font-family: 'Roboto Mono', sans-serif; font-size: 30px;"> Search Now</a> </p>
    {% else %}
-   <p> <a href="/" class="w3-button w3-black w3-padding-large w3-large w3-margin-top  w3-hover-opacity-on" style="font-family: 'Roboto Mono', sans-serif;font-size: 30px;"> Search Now</a> </p>
+   <p> <a href="/search" class="w3-button w3-black w3-padding-large w3-large w3-margin-top  w3-hover-opacity-on" style="font-family: 'Roboto Mono', sans-serif;font-size: 30px;"> Search Now</a> </p>
    {% endif %}
 </div>
 </div>
   <div class="w3-row w3-container" style="margin:50px 0">
-  <div class="w3-half w3-container">
+  <div class="w3-half w3-container" id="about">
     <div class="w3-topbar w3-border-amber">
       <img src="/w3images/cellphone.jpg" style="width:100%">
-      <h2>Smart Vacation</h2>
+      <h2 style=" font-size: 30px;">Ivy Nzioka</h2>
       <p>Full vacation control from your cell phone.</p>
     </div>
   </div>
@@ -63,7 +63,7 @@
   <div class="w3-half w3-container">
     <div class="w3-topbar w3-border-amber">
       <img src="/w3images/sealions.jpg" style="width:100%">
-      <h2>Super Offers</h2>
+      <h2 style="font-size: 30px;">Joy Wendo</h2>
       <p>Up to 50% offers. Always 25% student offers.</p>
     </div>
   </div>
@@ -73,7 +73,7 @@
   <div class="w3-half w3-container">
     <div class="w3-topbar w3-border-orange">
       <img src="/w3images/truck.jpg" style="width:100%">
-      <h2>Car Rental Included</h2>
+      <h2 style=" font-size: 30px;">James Nduge</h2>
       <p>Wherever you travel our car rental is included.</p>
     </div>
   </div>
@@ -81,7 +81,7 @@
   <div class="w3-half w3-container">
     <div class="w3-topbar w3-border-orange">
       <img src="/w3images/nowornever.jpg" style="width:100%">
-      <h2>Realize Your Dreams</h2>
+      <h2 style="font-size: 30px;">Oluwadamilola Shabi</h2>
       <p>Don't wait until it is to late.</p>
       </div>
   </div>
