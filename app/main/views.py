@@ -3,6 +3,9 @@ from . import main
 from flask_login import login_required,current_user
 import datetime
 from ..requests import get_flight
+import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 
 @main.route('/')
