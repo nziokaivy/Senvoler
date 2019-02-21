@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<title>S'envoler</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <div class="w3-top">
+            <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
+        <div class="w3-bar w3-amber w3-card w3-amber w3-hover-orange w3-hide-small"  style="bottom:10%;opacity:0.7;" id="myNavbar">
+          <a href="/" class="w3-bar-item w3-button w3-wide" style="font-family: 'Cedarville Cursive', cursive; font-size: 70px;">S'envoler</a>
+          <div class="w3-right w3-hide-small">
+              {% if current_user.is_authenticated %}
+            <a href="/" class="w3-bar-item w3-button" style="font-family: 'Roboto Mono', sans-serif; font-size: 20px;"><i class="fa fa-th"></i>SIGN OUT</a>
+            {%else%}
+            <a href="/" class="w3-bar-item w3-button" style="font-family: 'Roboto Mono', sans-serif;font-size: 20px;"><i class="fa fa-th"></i>SIGN IN</a>
+            {%endif%}
+            {% if current_user.is_authenticated %}
+            <a href="/" class="w3-bar-item w3-button" style="font-family: 'Roboto Mono', sans-serif;font-size: 20px;"><i class="fa fa-user"></i> PROFILE</a>
+            {%else%}
+            <a href="/" class="w3-bar-item w3-button" style="font-family: 'Roboto Mono', sans-serif;font-size: 20px;"><i class="fa fa-user"></i>PROFILE</a>
+            {%endif%}
+          </div>
+          <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+            <i class="fa fa-bars"></i>
+          </a>
+         
+        </div>
+      </div>
+      <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+        <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+        <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+        <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+        <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+        <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+      </nav>
+        </div>
+      </div>
+      <body>
+
+            <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+                    <img class="w3-image" src="{{ url_for('static', filename='photos/plane.jpeg') }}"  width="1500" height="700">
+                    <div class="w3-display-middle" style="width:65%">
+                      <div class="w3-bar w3-black">
+                          <h3 style="margin-left:30px;" >    Fly with us.....</h3>
+                      </div>
+                  
+                      <!-- Tabs -->
+                      <div id="Flight" class="w3-container w3-amber w3-padding-16 myLink " style="opacity:0.7;">
+                        <h3>Travel the world with us</h3>
+                        <div class="w3-row-padding" style="margin:0 -16px;">
+                          <div class="w3-half">
+                            <label><b> Traveling From</b></label>
+                            <input class="w3-input w3-border" type="text" placeholder="Departing from">
+                          </div>
+                          <div class="w3-half">
+                            <label><b>Traveling To</b></label>
+                            <input class="w3-input w3-border" type="text" placeholder="Arriving at">
+                          </div>
+                        </div>
+                        <div class="w3-row-padding" style="margin:0 -16px;">
+                                <div class="w3-half">
+                                  <label><b> Departure date</b></label>
+                                  <input class="w3-input w3-border" type="text" placeholder="YYYY-MM-DD">
+                                </div>
+                                <div class="w3-half">
+                                  <label><b> Return date</b></label>
+                                  <input class="w3-input w3-border" type="text" placeholder="YYYY-MM-DD">
+                                </div>
+                              </div>
+                            <div class="w3-row-padding" style="margin:0 -16px;">
+                                    <div class="w3-half">
+                                      <label><b> Number of adults</b></label>
+                                      <input type="number" class="w3-input w3-border" type="text" placeholder="Departing from">
+                                    </div>
+                                    <div class="w3-half">
+                                      <label><b> Number of infants<3</b> </label>
+                                      <input type ="number" class="w3-input w3-border" type="text" placeholder="Arriving at">
+                                    </div>
+                            </div>
+                        <p><button class="w3-button w3-dark-grey">Search and find dates</button></p>
+                      </div>
+                  
+
+
+
+
+  <script>
+    // Modal Image Gallery
+    function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
+    }
+    
+    
+    // Toggle between showing and hiding the sidebar when clicking the menu icon
+    var mySidebar = document.getElementById("mySidebar");
+    
+    function w3_open() {
+      if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+      } else {
+        mySidebar.style.display = 'block';
+      }
+    }
+    
+    // Close the sidebar with the close button
+    function w3_close() {
+        mySidebar.style.display = "none";
+    }
+    </script>
+    
+  </body>
+  </html>
