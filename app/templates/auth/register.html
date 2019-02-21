@@ -1,10 +1,14 @@
-
-
 {% import 'bootstrap/wtf.html' as wtf%}
 
 {% block content %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div class="w3-top">
+    <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
 <div class="col-md-2"> </div>
-<div class="col-md-8">
+<div class="col-md-8"  class="w3-bar-item w3-button" style="font-family: 'Roboto Mono', sans-serif; font-size: 20px;"><i class="fa fa-th"></i>
 
   {{wtf.quick_form(registration_form)}}
 
