@@ -1,5 +1,7 @@
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
+from . import login_manager,db
+
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -21,7 +23,7 @@ class User(UserMixin,db.Model):
     def password(self, password):
         self.pass_secure = password
 
-class Flight(object):
+class Flight:
     def __init__(self, originPlace, inboundDate, cabinClass, children,
                  infants,groupPricing,locale,destinationPlace,outboundDate, country):
         self.originPlace = originPlace
