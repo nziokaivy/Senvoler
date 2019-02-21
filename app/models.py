@@ -21,7 +21,7 @@ class User(UserMixin,db.Model):
     def password(self, password):
         self.pass_secure = password
 
-class FlightSearch(object):
+class Flight(object):
     def __init__(self, originPlace, inboundDate, cabinClass, children,
                  infants,groupPricing,locale,destinationPlace,outboundDate, country):
         self.originPlace = originPlace
