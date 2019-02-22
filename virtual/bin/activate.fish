@@ -29,7 +29,11 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
+<<<<<<< HEAD
 set -gx VIRTUAL_ENV "/home/ivy/Documents/Moringa-school-projects/core-projects/python/Senvoler/virtual"
+=======
+set -gx VIRTUAL_ENV "/Users/AbbyShabi/Desktop/Senvoler/virtual"
+>>>>>>> ebc2d90ff59b4948cc202c91777ad5b30310eb6b
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

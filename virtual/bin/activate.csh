@@ -8,7 +8,11 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
+<<<<<<< HEAD
 setenv VIRTUAL_ENV "/home/ivy/Documents/Moringa-school-projects/core-projects/python/Senvoler/virtual"
+=======
+setenv VIRTUAL_ENV "/Users/AbbyShabi/Desktop/Senvoler/virtual"
+>>>>>>> ebc2d90ff59b4948cc202c91777ad5b30310eb6b
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/bin:$PATH"

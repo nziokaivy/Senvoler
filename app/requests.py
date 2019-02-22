@@ -1,6 +1,9 @@
 import urllib.request,json
 from .models import Flight, User
-import ssl 
+import ssl
+
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 api_key = None
 
@@ -50,7 +53,6 @@ def process_results(flight_list):
         
 
     return flight_results    
-
 
    
         
